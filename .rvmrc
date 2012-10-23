@@ -1,0 +1,6 @@
+# to override the default rvm use line, create .rvmrc.local
+if [ -f .rvmrc.local ]; then
+  source .rvmrc.local
+else
+  rvm use --create 1.9.3@platform
+fi
