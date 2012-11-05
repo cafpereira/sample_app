@@ -37,6 +37,12 @@ describe User do
 		it { should_not be_valid }
 	end
 
+	describe "with admin attribute set to 'true'" do
+		before { @user.toggle!(:admin) }
+		
+		it { should be_admin }
+	end
+
 	describe "when email is not present" do
 		before { @user.email = " " }
 		it { should_not be_valid }
